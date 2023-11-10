@@ -6,7 +6,8 @@ using namespace std;
 int main() {
     string snils;
     cout << "ENTER SNILS: ";
-    cin >> snils;
+    getline(cin, snils);
+
 
     // Проверка на корректность с использованием регулярного выражения
     regex regex("[0-9]{3}-[0-9]{3}-[0-9]{3} [0-9]{2}");

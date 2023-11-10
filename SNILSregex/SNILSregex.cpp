@@ -7,16 +7,15 @@ int main() {
     string snils;
     cout << "ENTER SNILS: ";
     getline(cin, snils);
-
-
-    // Проверка на корректность с использованием регулярного выражения
     regex regex("[0-9]{3}-[0-9]{3}-[0-9]{3} [0-9]{2}");
-    if (regex_match(snils, regex)) {
-        cout << "SNILS is correct!" << endl;
+
+    while (not(regex_match(snils, regex))) {
+        system("cls");
+        cout << "SNILS is incorrect. Try again!" << endl;
+        cout << "ENTER SNILS: ";
+        getline(cin, snils);
     }
-    else {
-        cout << "SNILS is incorrect!" << endl;
-    }
+    cout << "SNILS is correct!" << endl;
 
     return 0;
 }
